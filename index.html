@@ -1,96 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Vinothini P | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinothini P. Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+ /* Global black theme */
+body {
+  margin: 0;
+  background-color: #000;    /* full black background */
+  color: #eaeaea;
+  font-family: 'Inter', sans-serif;
+}
+/* Header */
+.main-header {
+  width: 100%;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Nav container */
+.nav {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Hover underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #00bcd4;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .nav {
+    justify-content: center;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+}  section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 50px;
+      color: #0d6efd;
+    }
+
+  /* About Section – Compact */
+#about {
+  padding: 40px 20px;     /* REDUCED from big values */
+  min-height: auto;       /* IMPORTANT */
+}
+
+/* About container */
+/* Profile Image Fix */
+.about img {
+  width: 180px;        /* reduced width */
+  height: 180px;       /* fixed height */
+  object-fit: cover;   /* keeps image proportion */
+  border-radius: 20px;
+  display: block;
+}
+.about {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;              /* reduced gap */
+}
+
+/* About title */
+#about h2,
+.about-title {
+  margin-bottom: 16px;    /* reduce title space */
+}
+
+/* Paragraph text */
+.about-content p {
+  margin-bottom: 10px;    /* reduce paragraph gap */
+  line-height: 1.6;       /* tighter text */
+  font-size: 0.95rem;
+}
+ /* FULL RESET FOR PROJECTS */
+.projects-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* CENTER SECTION */
+  background: #000;
+}
+
+.projects-inner {
+  width: 100%;
+  max-width: 1200px;         /* CENTER CONTENT */
+  margin: 0 auto;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* Title */
+.projects-title {
+  color: #1e90ff;
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+/* CARD ROW — BULLETPROOF CENTERING */
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;     /* CENTER CARDS */
+  gap: 30px;
+}
+
+/* CARD */
+.project-card {
+  width: 300px;
+  background: linear-gradient(135deg, #1e90ff, #005eff);
+  padding: 28px;
+  border-radius: 18px;
+  color: #ffffff;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 45px rgba(30, 144, 255, 0.5);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .project-card {
+    width: 90%;
+  }
+}
+ /* Contact Section */
+.contact-section {
+  background-color: #000;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Title */
+.contact-title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+/* List */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+}
+
+/* List Item */
+.contact-list li {
+  margin-bottom: 20px;
+}
+
+/* Link */
+.contact-list a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.3s ease;
+}
+
+/* Icons */
+.contact-list i {
+  font-size: 22px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Hover */
+.contact-list a:hover {
+  color: #00ffff;
+}
+
+.contact-list a:hover i {
+  color: #00ffff;
+  text-shadow: 0 0 6px #00ffff, 0 0 12px #00ffff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-list {
+    text-align: center;
+  }
+
+  .contact-list a {
+    justify-content: center;
+  }
+}
+</style>
+   /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.05);
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .about {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="header">
-        <h1>Vinothini P</h1>
-        <p>Full Stack Web Development Intern</p>
-         
-     <nav class="nav-left">
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact Me</a>
-    
-    </nav>
+  <header class="main-header">
+  <nav class="nav">
+    <div class="logo">Vinothini P.</div>
 
-    </header>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
+  <section class="hero">
+    <h2>Hi, I'm Vinothini</h2>
+    <p>I'm a Full Stack Developer passionate about UI/UX and modern web design. I create clean and user-friendly web experiences.</p>
+    <a href="#projects">See My Work</a>
+  </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <img src="C:\xampp\htdocs\vinothini\assest\image\vino23.jpg.jpeg"alt="Profile Photo">
-        <div>
-            <h2>About Me</h2>
-            <p>
-                I am Vinothini P, a 3rd year Engineering student with a strong interest
-                in Web Development. I am currently doing an internship where I build
-                responsive and user-friendly websites using HTML, CSS, and JavaScript.
-                <p>
-        I have hands-on experience in building responsive web pages using HTML,
-        CSS, and basic JavaScript. During my internship, I worked on real-time
-        projects such as a restaurant website and a personal portfolio.
-    </p>
-
-    <p>
-        I am a self-motivated learner who enjoys solving problems, learning new
-        technologies, and working in team environments. My goal is to grow as a
-        software developer and secure a role in a reputed technology company.
-    </p>
+  <section id="about">
+  <h2>About Me</h2>
+  <div class="about">
+    <img src="C:\xampp\htdocs\vinothini\assest\image\vino23.jpg.jpeg"alt="Vinothini P">
+    <div class="about-content">
+      <p>
+        I’m Vinothini P., a 3rd-year engineering student and aspiring Full Stack Developer.
+        I focus on creating modern, user-friendly web interfaces with a strong interest in UI/UX design.
+      </p>
+      <p>
+        Skilled in HTML, CSS, JavaScript, Python, and Machine Learning.
+        I enjoy building clean, responsive, and visually appealing web applications.
+      </p>
+    </div>
+  </div>
 </section>
-            </p>
-        </div>
-    </section>
+<section id="projects" class="projects-section">
+  <div class="projects-inner">
+    <h2 class="projects-title">Projects</h2>
 
-    <!-- Skills Section -->
-    <section class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript (Basics)</li>
-            <li>Python</li>
-            <li>Git & GitHub</li>
-        </ul>
-    </section>
+    <div class="projects-wrapper">
+      <div class="project-card">
+        <h3>Restaurant Website</h3>
+        <p>A responsive restaurant website built with HTML, CSS, and JS.</p>
+      </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
+      <div class="project-card">
+        <h3>Car Price Prediction</h3>
+        <p>Machine learning project using Python and Scikit-learn.</p>
+      </div>
 
-        <div class="project-card">
-            <h3>Restaurant Website</h3>
-            <p>Designed a responsive restaurant website using HTML and CSS.</p>
-        </div>
+      <div class="project-card">
+        <h3>Sales Prediction</h3>
+        <p>Python project for analyzing and predicting sales data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+ <section id="contact" class="contact-section">
+  <h2 class="contact-title">Contact</h2>
 
-        <div class="project-card">
-            <h3>Personal Portfolio</h3>
-            <p>Created a personal portfolio to showcase skills and projects.</p>
-        </div>
-    </section>
+  <ul class="contact-list">
+    <li>
+      <a href="https://www.linkedin.com/in/your-username" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+        LinkedIn
+      </a>
+    </li>
 
-    <!-- Contact Section -->
-    
-      <section id="contact"> 
-            <h2>Contact Me</h2> 
-            <p> 
-                Thank you for visiting my portfolio. If you would like to get in touch, you can reach me at: 
-            </p> 
-            <ul> 
-                <li>Email: your.email@example.com</li> 
-                <li>LinkedIn: <a href="https://www.linkedin.com/jobs/" target="_blank">Your LinkedIn Profile</a></li> 
-                <li>GitHub: <a href="https://github.com/" target="_blank">Your GitHub Profile</a></li> 
-            </ul> 
-        </section>
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Vinothini P. All rights reserved.</p>
-    </footer>
+    <li>
+      <a href="https://github.com/your-username" target="_blank">
+        <i class="fa-brands fa-github"></i>
+        GitHub
+      </a>
+    </li>
+
+    <li>
+      <a href="mailto:your.email@example.com">
+        <i class="fa-solid fa-envelope"></i>
+        Email
+      </a>
+    </li>
+  </ul>
+</section>
+
+  <footer>
+    &copy; 2025 Vinothini P. All Rights Reserved
+  </footer>
 
 </body>
 </html>
